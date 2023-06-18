@@ -14,7 +14,7 @@ pipeline {
          stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t eradarshchauhan/demo-0.0.1-SNAPSHOT .'
+                    sh 'docker build -t eradarshchauhan/app .'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                     sh 'docker login -u eradarshchauhan -p ${dockerhubpwd}'
 
                     }
-                    sh 'docker push eradarshchauhan/demo-0.0.1-SNAPSHOT'
+                    sh 'docker push eradarshchauhan/app'
                 }
             }
         }
